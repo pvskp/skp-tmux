@@ -2,7 +2,7 @@
 
 # Inspiration from https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 
-fzfc="$HOME/dotfiles/.local/bin/fzfc"
+fzfc="$HOME/.tmux/scripts/fzf.tmux"
 
 if [[ $# -eq 1 ]]; then
   selected=$1

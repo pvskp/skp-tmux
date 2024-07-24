@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-fzfc="$HOME/dotfiles/.local/bin/fzfc"
+fzfc="$HOME/.tmux/scripts/fzf.tmux"
 
 if [ -z "$(pgrep tmux)" ]
 then
