@@ -95,5 +95,5 @@ bind -n 'M-Down'  if-shell "$is_vim" 'send-keys M-Down' 'resize-pane -D 1'
 bind -n 'M-Up'    if-shell "$is_vim" 'send-keys M-Up' 'resize-pane -U 1'
 bind -n 'M-Right' if-shell "$is_vim" 'send-keys M-Right' 'resize-pane -R 1'
 
-bind -n M-f run-shell "tmux neww ~/.local/bin/tmxswitcher"
-bind -n M-n run-shell "tmux neww ~/.local/bin/tmux-sessionizer"
+bind -n M-f run-shell "tmux neww ~/.tmux/scripts/switcher.tmux"
+bind -n M-n run-shell "tmux neww ~/.tmux/scripts/sessionizer.tmux"
