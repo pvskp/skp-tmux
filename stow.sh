@@ -3,18 +3,24 @@ base_dir=$(dirname "$(realpath "$0")")
 
 finished_with_errors=0
 
-# if [ ! -d "$HOME/.tmux/" ]; then
-#   echo "Warning: missing '.tmux/'. creating..."
-#   mkdir ~/.tmux/
-# fi
+if [ -L "$HOME/.tmux" ]; then
+ echo "Error: .tmux/ symbolic link already exists. Delete it first."
+ exit 1
+fi
 
 ln -s "$base_dir/tmux/" "$HOME/.tmux"
 if [ $? -ne 0 ]; then
-  echo "Error: failed to export .tmux/"
+  echo "Error: failed to export ~/.tmux/"
   finished_with_errors=1
 fi
 
-ln -s "$base_dir/tmux.conf" "$HOME/.tmux.conf"
+tmux_conf="$HOME/.tmux.conf"
+if [ -L "$tmux_conf" ]; then
+ echo "Error: ~/.tmux.conf symbolic link already exists. Delete it first."
+ exit 1
+fi
+
+ln -s "$base_dir/tmux.conf" "$tmux_conf"
 if [ $? -ne 0 ]; then
   echo "Error: failed to export .tmux.conf"
   finished_with_errors=1
