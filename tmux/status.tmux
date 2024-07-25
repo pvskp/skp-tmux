@@ -112,8 +112,8 @@ user_section="$(apply_color ${color_user_icon_fg} ${color_user_icon_bg} "${user_
 user_section="${user_section}$(apply_color ${color_user_text_fg} ${color_user_text_bg} " ${USER}@$(hostname) ")"
 
 # set -g status-style "bg=${color_bg}"
-set -g status-left "${double_separator}${session_section}${double_separator}${double_separator}"
-set -g status-right "${calendar_section}${double_separator}${clock_section}${double_separator}${user_section}${double_separator}"
+set -g status-left "${session_section}${double_separator}${double_separator}"
+set -g status-right "${calendar_section}${double_separator}${clock_section}${double_separator}${user_section}"
 
 colored_sep="$(apply_color ${color_win_current_bg} ${color_win_current_fg} ${separator})"
 window_current_section="${colored_sep}"
@@ -127,4 +127,5 @@ window_content="$(apply_color ${color_fg_alt} ${color_bg_alt} "#I:#W")"
 setw -g window-status-format "${colored_sep}${window_content}${colored_sep}"
 # setw -g window-status-format "#[bg=${color_bg_alt} fg=${color_fg_alt}]#I:#W"
 
+set -g status-position top
 # set -g status off # disable status bar
