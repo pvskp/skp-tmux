@@ -16,10 +16,12 @@ set -g prefix M-a
 bind M-a send-prefix
 
 
-set-window-option -g mode-keys vi
+setw -g mode-keys vi
 bind -T copy-mode-vi 'v' send -X begin-selection
 bind -T copy-mode-vi 'y' send -X copy-selection
 bind -T copy-mode-vi 'C-c' send -X clear-selection
+bind -t vi-copy V rectangle-toggle
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xsel"
 
 
 # Bind status bar toggle
