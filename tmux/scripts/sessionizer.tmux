@@ -10,6 +10,7 @@ else
   dirs=$(find ~/Documents/repos/ -mindepth 1 -maxdepth 1 -type d)
   config_dirs=$(find ~/.config/ -mindepth 1 -maxdepth 1 -type d,l)
   dirs="${dirs}"$'\n'"${config_dirs}"
+  dirs="${dirs}"$'\n'"$HOME/Documents/unicamp/"
   dirs="${dirs}"$'\n'"$HOME/dotfiles/"
   dirs="${dirs}"$'\n'"$HOME/syncthing/personal-vault-obsidian/"
   dirs="${dirs}"$'\n'"$HOME/.config/nvim"
