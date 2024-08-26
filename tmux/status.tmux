@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+THEME="rose-pine"
+
 source ~/.tmux/api.tmux
 
 apply_color(){
@@ -13,67 +15,7 @@ apply_color(){
     echo "#[fg=${fg} bg=${bg}]${text}#[fg=default bg=default]"
 }
 
-# color_bg="#171717"
-# color_bg_all="#99AA38"
-# color_fg_default="colour16"
-# color_fg_alt="grey"
-# color_bg_alt="#2d2d2d"
-# color_bg_highlight="#14591D"
-# color_fg_highlight="#ACD2ED"
-#
-# color_win_current_bg="#7E935B"
-# color_win_current_fg="#ffffff"
-#
-# color_session_text_bg="#B0342F"
-# color_session_text_fg="#ffffff"
-# color_session_icon_bg="#A8201A"
-# color_session_icon_fg="#ffffff"
-#
-# color_calendar_icon_bg="#CA5D22"
-# color_calendar_icon_fg="#000000"
-# color_calendar_text_bg="#EC9A29"
-# color_calendar_text_fg="#000000"
-#
-# color_clock_icon_bg="#ACD2ED"
-# color_clock_icon_fg="#143642"
-# color_clock_text_bg="#0F8B8D"
-# color_clock_text_fg="#ffffff"
-#
-# color_user_icon_bg="##2C001E"
-# color_user_icon_fg="#5E2750"
-# color_user_text_bg="#77216F"
-# color_user_text_fg="#ffffff"
-
-color_bg="#434C5E"
-color_bg_all="#99AA38"
-color_fg_default="colour16"
-color_fg_alt="#E5E9F0"
-color_bg_alt="#3B4252"
-color_bg_highlight="#14591D"
-color_fg_highlight="#ACD2ED"
-
-color_win_current_bg="#A3BE8C"
-color_win_current_fg="#ffffff"
-
-color_session_text_bg="#BF616A"
-color_session_text_fg="#ffffff"
-color_session_icon_bg="#aa4752"
-color_session_icon_fg="#ffffff"
-
-color_calendar_icon_bg="#D08770"
-color_calendar_icon_fg="#000000"
-color_calendar_text_bg="#EBCB8B"
-color_calendar_text_fg="#000000"
-
-color_clock_icon_bg="#81A1C1"
-color_clock_icon_fg="#143642"
-color_clock_text_bg="#8FBCBB"
-color_clock_text_fg="#ffffff"
-
-color_user_icon_bg="#8c6e8f"
-color_user_icon_fg="#5E2750"
-color_user_text_bg="#B48EAD"
-color_user_text_fg="#ffffff"
+source "$HOME/.tmux/themes/${THEME}.sh"
 
 set -g status-justify left
 set -g status-left-length 50
@@ -127,5 +69,5 @@ window_content="$(apply_color ${color_fg_alt} ${color_bg_alt} "#I:#W")"
 setw -g window-status-format "${colored_sep}${window_content}${colored_sep}"
 # setw -g window-status-format "#[bg=${color_bg_alt} fg=${color_fg_alt}]#I:#W"
 
-set -g status-position top
+set -g status-position bottom
 # set -g status off # disable status bar
