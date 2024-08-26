@@ -18,4 +18,4 @@ set -ga terminal-overrides ",tmux-256color:Tc"
 
 # --<< Pane coloring >>--
 set -g pane-active-border-style "bg=default fg=white"
-set -g pane-border-style "bg=default fg=black"
+set -g pane-border-style "bg=default fg=colour241"
