@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-THEME="rose-pine"
+THEME="default"
 
 source ~/.tmux/api.tmux
 
