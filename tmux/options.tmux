@@ -2,6 +2,7 @@
 source ~/.tmux/api.tmux
 
 set -g status-position top
+set -g status on # disable status bar
 
 # Start windows and panes at 1, not 0
 set -g base-index 1

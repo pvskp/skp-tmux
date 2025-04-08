@@ -42,7 +42,7 @@ bind c new-window -c "#{pane_current_path}"
 bind -n M-x kill-pane
 
 # Go to last window
-bind -n M-Tab last-window
+bind Tab last-window
 
 # Go to window x
 bind -n M-1 select-window -t :1

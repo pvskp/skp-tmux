@@ -68,6 +68,3 @@ colored_sep="$(apply_color ${color_bg_alt} "default" ${separator})"
 window_content="$(apply_color ${color_fg_alt} ${color_bg_alt} "#I:#W")"
 setw -g window-status-format "${colored_sep}${window_content}${colored_sep}"
 # setw -g window-status-format "#[bg=${color_bg_alt} fg=${color_fg_alt}]#I:#W"
-
-set -g status-position bottom
-# set -g status off # disable status bar
